@@ -19,7 +19,7 @@ function Footer() {
     </div>
 
     <p className="my-6 text-gray-500 dark:text-gray-400">
-    "Empowering Minds, Shaping Futures with Knowledge, Innovation, and Growth."
+    Empowering Minds, Shaping Futures with Knowledge, Innovation, and Growth.
     </p>
     <ul className="flex flex-wrap justify-center items-center mb-6 gap-4 text-gray-900 dark:text-white">
       <li className={clsx('hover:text-blue-400', pathname === '/' && 'text-blue-400')}>
@@ -41,7 +41,7 @@ function Footer() {
         className="hover:underline"
         href="#"
       >
-        Flowbite™
+        Shehzada Nand College
       </Link>
       . All Rights Reserved.
     </span>

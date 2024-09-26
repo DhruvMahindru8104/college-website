@@ -24,12 +24,13 @@ function Placed() {
   {
     students.map((i)=>{
         return(
-    <div className='w-full md:w-1/3 '>
-    <BackgroundGradient className="rounded-[22px]   p-5 sm:p-10 bg-white dark:bg-zinc-900">
+    <div className='w-full md:w-1/3  ' key={i.name}>
+    <BackgroundGradient className="rounded-[22px]  p-5 sm:p-10 bg-white dark:bg-zinc-900">
     <div className=' bg-blue-600flex flex-col w-full '> {/* remember images ka sath kaam krte wakt sirf width hi dena hai , height dene ki jrurat nhi( height aspect ratio apne aap adjust kr lega ) and remember width and height hogi vo aspect ratio k parent div mein deni hai*/}
 <AspectRatio ratio={10 / 10} > {/* aspect ratio ka ek parent hmesha hoga . and hmesha isi aspect mein rhegi image mtlb width 16 hogi and height 9 hogi chahe width jo mrzi hi kyu na ho  */}
 <Image // image component bhi hmesha aspect ratio k andr rhega 
   src={i.pic}
+  alt='img'
   fill // ise hmesha fill rkho kyuki apect ratio k hisab se image apne aap ko fill rkhegi 
   className="h-full w-full rounded-md object-cover"
   />
