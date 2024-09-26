@@ -32,7 +32,7 @@ export default function Activities() {
       ];
   return (
     <>
-    <div className="text-blue-400 text-center text-4xl py-20 flex flex-row-reverse justify-center items-center gap-1" >Our College Activities <FaUniversity/></div>
+    <div className="text-blue-400 text-center text-2xl md:text-3xl py-20 flex flex-row-reverse justify-center items-center gap-1" >Our College Activities <FaUniversity/></div>
     <div className="w-full flex justify-center flex-wrap gap-4 ">
 {
     activity.map((i)=>{

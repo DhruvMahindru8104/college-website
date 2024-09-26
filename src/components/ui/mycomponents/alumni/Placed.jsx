@@ -18,7 +18,7 @@ function Placed() {
     ]
   return (
     <>
-    <div className='flex justify-center text-5xl items-center font-semibold text-blue-400 mt-5 mb-16 gap-2'><FaBuildingCircleCheck/> Our Placed Students</div>
+    <div className='flex justify-center text-3xl md:text-5xl  items-center font-semibold text-blue-400 mt-5 mb-16 gap-2'><FaBuildingCircleCheck/> Our Placed Students</div>
     
     <div className='flex justify-center flex-wrap gap-10'>
   {
