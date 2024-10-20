@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { IoLogoInstagram } from "react-icons/io";
@@ -6,12 +7,17 @@ import { FaYoutube } from "react-icons/fa";
 import { AspectRatio } from '../../aspect-ratio'
 import { AiTwotoneMail } from "react-icons/ai";
 import { FaPhoneVolume } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
 function Top() {
   return (
     <>
   <div className="flex flex-col md:flex-row justify-center  p-5 gap-5 py-24 ">
-    <div className='  flex flex-col w-full md:w-1/2 drop-shadow-2xl dark:drop-shadow-[0_35px_35px_rgba(0,112,255,0.5)]  '> {/* remember images ka sath kaam krte wakt sirf width hi dena hai , height dene ki jrurat nhi( height aspect ratio apne aap adjust kr lega ) and remember width and height hogi vo aspect ratio k parent div mein deni hai*/}
+    <motion.div className='  flex flex-col w-full md:w-1/2 drop-shadow-2xl dark:drop-shadow-[0_35px_35px_rgba(0,112,255,0.5)]  '
+      initial={{opacity:0,x:-40}}
+      whileInView={{opacity:1,x:0}}
+      transition={{ease:'easeInOut',duration:0.6}}
+    > {/* remember images ka sath kaam krte wakt sirf width hi dena hai , height dene ki jrurat nhi( height aspect ratio apne aap adjust kr lega ) and remember width and height hogi vo aspect ratio k parent div mein deni hai*/}
   <AspectRatio ratio={16 / 9} > {/* aspect ratio ka ek parent hmesha hoga . and hmesha isi aspect mein rhegi image mtlb width 16 hogi and height 9 hogi chahe width jo mrzi hi kyu na ho  */}
   <Image // image component bhi hmesha aspect ratio k andr rhega 
     src='/images/gallery/gallery1.jpg'
@@ -20,9 +26,13 @@ function Top() {
     className="h-full w-full rounded-md object-cover"
   />
 </AspectRatio>
-</div>
+</motion.div>
     
-    <div className=" flex  flex-col justify-start  w-full md:w-1/2 ">
+    <motion.div className=" flex  flex-col justify-start  w-full md:w-1/2 "
+      initial={{opacity:0,x:40}}
+      whileInView={{opacity:1,x:0}}
+      transition={{ease:'easeInOut',duration:0.6}}
+    >
       <h1 className="mb-3 text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl">
          Shahzada Nand College Contact Page
       </h1>
@@ -41,7 +51,7 @@ function Top() {
      {/* email and phone end */}
     
       
-    </div>
+    </motion.div>
   </div>
     </>
   )

@@ -2,6 +2,7 @@
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
+import { motion } from 'framer-motion'
 
 import {
   Accordion,
@@ -37,7 +38,12 @@ function Navbar() {
   const pathname = usePathname(); // Get current path
   return (
     <>
-    <nav className='flex justify-between items-center 2xl:justify-center  p-2   '>
+    {/* <div className='overflow-hidden'> */}
+    <motion.nav className='flex justify-between items-center 2xl:justify-center  p-2 '
+      initial={{opacity:0,y:-40}}
+      whileInView={{opacity:1,y:0}}
+      transition={{ease:'easeInOut',duration:0.6}}
+    >
 
 {/* logo area start */}
 <div className='flex items-center w-[40%] gap-1  '>
@@ -132,7 +138,8 @@ function Navbar() {
 {/* dark mode and hamburger end */}
 
 
-    </nav>
+    </motion.nav>
+      {/* </div> */}
     </>
   )
 }

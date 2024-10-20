@@ -1,14 +1,19 @@
+'use client'
 import React from 'react'
 import { AspectRatio } from '../../aspect-ratio'
 import Image from 'next/image'
-
+import { motion } from 'framer-motion'
 function Presidentmessage() {
   return (
     <>
     
-<section className="text-gray-600 dark:text-gray-300 body-font">
+<section className="text-gray-600 dark:text-gray-300 body-font overflow-hidden">
   <div className="flex px-5 py-2 md:py-24 md:flex-row flex-col items-start gap-3 justify-center ">
-  <div className='  md:w-1/4 w-full drop-shadow-2xl dark:drop-shadow-[0_35px_35px_rgba(0,112,255,0.5)]'> {/* remember images ka sath kaam krte wakt sirf width hi dena hai , height dene ki jrurat nhi( height aspect ratio apne aap adjust kr lega ) and remember width and height hogi vo aspect ratio k parent div mein deni hai*/}
+  <motion.div className='  md:w-1/4 w-full drop-shadow-2xl dark:drop-shadow-[0_35px_35px_rgba(0,112,255,0.5)]'
+       initial={{opacity:0,x:-40}}
+       whileInView={{opacity:1,x:0}}
+       transition={{ease:'easeInOut',duration:0.6}}
+  > {/* remember images ka sath kaam krte wakt sirf width hi dena hai , height dene ki jrurat nhi( height aspect ratio apne aap adjust kr lega ) and remember width and height hogi vo aspect ratio k parent div mein deni hai*/}
   <AspectRatio ratio={10 / 10} > {/* aspect ratio ka ek parent hmesha hoga . and hmesha isi aspect mein rhegi image mtlb width 16 hogi and height 9 hogi chahe width jo mrzi hi kyu na ho  */}
   <Image // image component bhi hmesha aspect ratio k andr rhega 
     src='/images/president.png'
@@ -17,8 +22,12 @@ function Presidentmessage() {
     className="h-full w-full rounded-md object-cover"
   />
 </AspectRatio>
-</div>
-    <div className="md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center ">
+</motion.div>
+    <motion.div className="md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center "
+         initial={{opacity:0,x:40}}
+         whileInView={{opacity:1,x:0}}
+         transition={{ease:'easeInOut',duration:0.6}}
+    >
       <h1 className="title-font sm:text-4xl text-3xl  mb-4 font-medium text-blue-400 ">
         President Message
       </h1>
@@ -35,7 +44,7 @@ function Presidentmessage() {
       (Mrs. Sushma Mehra)
       </p>
 
-    </div>
+    </motion.div>
   </div>
 </section>
     </>

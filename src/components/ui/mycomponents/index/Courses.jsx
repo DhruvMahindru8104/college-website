@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import {
@@ -10,6 +11,7 @@ import {
     TableRow,
   } from "@/components/ui/table"
 import { FaBook } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
   
 function Courses() {
@@ -66,10 +68,15 @@ function Courses() {
     ]
   return (
     <>
-    <div className='py-24'>
+    <div className='py-24 '>
 
     <div className='text-4xl text-center text-blue-400 mb-4 flex flex-row-reverse justify-center items-center gap-2'>Our Courses <FaBook size={30}/></div>
-    <section className='w-full  flex justify-center text-lg'>
+    <motion.section className='w-full  flex justify-center text-lg'
+    initial={{opacity:0,scale:0.8}}
+    whileInView={{opacity:1,scale:1}}
+
+    transition={{ease:'easeInOut',duration:1}}
+    >
     <div className=' w-full md:w-[75%]  '>
     <Table >
   <TableHeader >
@@ -97,7 +104,7 @@ function Courses() {
   </TableBody>
 </Table>
     </div>
-    </section>
+    </motion.section>
     </div>
 
     </>
